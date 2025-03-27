@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VBF Law Firm</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            transition: background-color 0.5s ease-in-out;
+        }
+        header {
+            background: navy;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            transition: background 0.5s ease;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: gold;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+        nav ul li a:hover {
+            color: white;
+            transform: scale(1.1);
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s, visibility 0.5s;
+            position: absolute;
+            width: 100%;
+        }
+        section.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            position: relative;
+        }
+        .slider {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        } {
+            overflow: hidden;
+            max-width: 800px;
+            margin: auto;
+            position: relative;
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slider img {
+            width: 100%;
+            max-width: 400px;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev { left: 0; }
+        .next { right: 0; }
+        footer {
+            background: navy;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            transition: background 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>VBF Law Firm</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('home')">Beranda</a></li>
+                <li><a href="#" onclick="showSection('about')">Tentang Kami</a></li>
+                <li><a href="#" onclick="showSection('services')">Layanan</a></li>
+                <li><a href="#" onclick="showSection('experience')">Pengalaman</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="active">
+            <h2>Commitment. Integrity. Excellence.</h2>
+            <p>Kami siap membantu masalah hukum Anda dengan profesionalisme dan dedikasi tinggi.</p>
+            <div class="slider-container">
+                <button class="prev" onclick="prevSlide('homeSlider')">&#10094;</button>
+                <div class="slider" id="homeSlider" style="gap: 0;">
+                    <div>
+                        <img src="c:\Users\Windows\Pictures\Saved Pictures\WhatsApp Image 2025-03-24 at 18.51.23_91d305a3.jpg" alt="Vladimir" style="width: 400px; height: 600px;">
+                        <p>Vladimir Allendra</p>
+                    </div>
+                    <div>
+                        <img src="c:\Users\Windows\Pictures\Saved Pictures\WhatsApp Image 2025-03-24 at 18.51.23_429ed42a.jpg" alt="Basyar" style="width: 400px; height: 600px;">
+                        <p>Dinta A. Basyar
+                        </p>
+                    </div>
+                    <div>
+                        <img src="c:\Users\Windows\Pictures\Saved Pictures\WhatsApp Image 2025-03-24 at 18.51.23_18f884b0.jpg" alt="Firnanda" style="width: 400px; height: 600px;">
+                        <p>Andika Firnanda</p>
+                    </div>
+                </div>
+                <button class="next" onclick="nextSlide('homeSlider')">&#10095;</button>
+            </div>
+        </section>
+        <section id="about">
+            <h2>Tentang Kami</h2>
+            <p>Based in Jakarta, Indonesia,
+                Vladimir Basyar Firnanda
+                Law Office has established
+                itself as an energetic and
+                ambitious law office. Since
+                the firm was founded in
+                2017, our growth has been
+                consistent and rapid.
+                We are unique among our peers
+                Indonesian law firm to operate
+                an office outside of Jakarta. Our
+                Yogyakarta office was opened in
+                2018 and we manage both
+                offices as an integrated whole.
+                Our success has been built on a
+                commitment to exceptional
+                standards of service - a
+                recognition that expertise is of
+                little value unless it is delivered
+                in a truly personal client- focused
+                way, together with the ability to
+                provide creative and innovative solutions to our clients.</p>
+            <div class="slider-container">
+                <button class="prev" onclick="prevSlide('lawyerSlider')">&#10094;</button>
+                <div class="slider" id="lawyerSlider">
+                    <img src="c:\Users\Windows\Pictures\Saved Pictures\WhatsApp Image 2025-03-25 at 14.03.45_15af24aa.jpg" alt="Vladimir" style="width: 250px; height: 400px;">
+                    <img src="c:\Users\Windows\Pictures\Saved Pictures\WhatsApp Image 2025-03-25 at 14.03.45_b92ccbe0.jpg" alt="Basyar" style="width: 250px; height: 400px;">
+                    <img src="c:\Users\Windows\Pictures\Saved Pictures\WhatsApp Image 2025-03-25 at 14.03.44_f4cd4329.jpg" alt="Firnanda" style="width: 250px; height: 400px;">
+                </div>
+                <button class="next" onclick="nextSlide('lawyerSlider')">&#10095;</button>
+            </div>
+        </section>
+        <section id="services">
+            <h2>Layanan</h2>
+            <p>Corporate Legal Matters.
+                We handle clients' business transactions, includes negotiating, drafting/reviewing of contracts, tax, setting up a company - establishment & company registration, business license and permits.
+                
+                Litigation.
+                Represents plaintiffs or defendants in civil lawsuits. We manage all phases of the litigation from the investigation, pleadings, and discovery through the pre-trial, trial, settlement, and appeal processes.
+                
+                Merger and Acquisition.
+                We assist our clients with the appropriate legal advices, identify the legal issues, build a “road map” for the client from start to finish. Advise on deal and negotiating tactics. Conduct due diligence on other side, and provide advice concerning the drafting, negotiation, and performance of contracts for the sale of portions of the business.
+                
+                </p>
+            <div class="slider-container">
+                <button class="prev" onclick="prevSlide('serviceSlider')">&#10094;</button>
+                <div class="slider" id="serviceSlider">
+                    <img src="c:\Users\Windows\Pictures\Saved Pictures\WhatsApp Image 2025-03-24 at 18.51.22_77de2acd.jpg" alt="" style="width: 400px; height: 250px;">
+                    <img src="c:\Users\Windows\Pictures\Saved Pictures\WhatsApp Image 2025-03-24 at 18.51.22_a4d5e9f9.jpg" alt="" style="width: 400px; height: 250px;">
+                    <img src="c:\Users\Windows\Pictures\Saved Pictures\WhatsApp Image 2025-03-24 at 18.51.22_ded281cd.jpg" alt="" style="width: 400px; height: 250px;">
+                </div>
+                <button class="next" onclick="nextSlide('serviceSlider')">&#10095;</button>
+            </div>
+        </section>
+        <section id="experience">
+            <h2>Pengalaman</h2>
+            <p>Kami telah memiliki pengalaman di bidang, Corporation,
+                Intellectual Property,
+                Bankruptcy & Insolvency,
+                Tax Law,
+                Foreign Direct Investment, and
+                Family Law.</p>
+            <div class="slider-container">
+                <button class="prev" onclick="prevSlide('experienceSlider')">&#10094;</button>
+                <div class="slider" id="experienceSlider">
+                    <img src="c:\Users\Windows\Pictures\Saved Pictures\WhatsApp Image 2025-03-25 at 14.41.42_ae146386.jpg" alt="">
+                    <img src="c:\Users\Windows\Pictures\Saved Pictures\WhatsApp Image 2025-03-24 at 18.51.24_9e024a6b.jpg" alt="">
+                    <img src="c:\Users\Windows\Pictures\Saved Pictures\WhatsApp Image 2025-03-24 at 18.51.24_09549533.jpg" alt="">
+                </div>
+                <button class="next" onclick="nextSlide('experienceSlider')">&#10095;</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 VBF Law Firm. Hak Cipta Dilindungi.</p>
+    </footer>
+    <script>
+        function showSection(sectionId) {
+            let sections = document.querySelectorAll("main section");
+            sections.forEach(section => {
+                section.classList.remove("active");
+            });
+            let targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                setTimeout(() => {
+                    targetSection.classList.add("active");
+                }, 100);
+            }
+        }
+        function prevSlide(sliderId) {
+            let slider = document.getElementById(sliderId);
+            if (slider) {
+                slider.appendChild(slider.firstElementChild);
+            }
+        }
+        function nextSlide(sliderId) {
+            let slider = document.getElementById(sliderId);
+            if (slider) {
+                slider.insertBefore(slider.lastElementChild, slider.firstElementChild);
+            }
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            showSection('home');
+        });
+    </script>
+</body>
+</html>
